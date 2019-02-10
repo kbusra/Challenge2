@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+android:layout_margin="25dp">
+
+    <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="10dp">
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            <ImageView
+                    android:id="@+id/imageProduct"
+                    android:background="@drawable/image"
+                    android:layout_width="220dp"
+                    android:layout_height="250dp"/>
+
+            <TextView
+                    android:id="@+id/productTitle"
+                    android:textColor="@android:color/black"
+                    android:text="@string/title"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"/>
+            <TextView
+                    android:textColor="@android:color/black"
+                    android:id="@+id/companyName"
+                    android:text="@string/company_name"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"/>
+            <FrameLayout android:layout_width="match_parent"
+                         android:layout_height="match_parent">
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:background="@color/viewBackground"/>
+                <TextView
+                        android:textColor="@android:color/black"
+                        android:id="@+id/price"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="15dp"
+                        android:text="@string/price"
+                        android:gravity="left"/>
+                <TextView
+                        android:textColor="@android:color/black"
+                        android:id="@+id/oldPrice"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/old_price"
+                        android:gravity="right"
+                        android:paddingRight="15dp"/>
+            </FrameLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

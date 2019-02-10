@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Challenge</string>
+    <string name="title">Title</string>
+    <string name="company_name">Company Name</string>
+    <string name="price">Price</string>
+    <string name="old_price">Old Price</string>
+</resources>
