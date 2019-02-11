@@ -7,11 +7,12 @@ import com.example.challenge.R
 import com.example.challenge.dto.Products
 
 class productViewHolder(viewGroup: ViewGroup) : RecyclerView.ViewHolder(
-    LayoutInflater.from(viewGroup.context)
-        .inflate(R.layout.list_item_products, viewGroup, false)
+    LayoutInflater.from(viewGroup.context).inflate(R.layout.list_item_products, viewGroup, false)
 ) {
 
+
     fun bindTo(products: Products) {
+
 
     }
 
