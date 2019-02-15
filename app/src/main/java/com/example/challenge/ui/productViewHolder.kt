@@ -5,7 +5,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.challenge.R
-import com.example.challenge.dto.Data
 import com.example.challenge.model.Product
 
 class productViewHolder(viewGroup: ViewGroup) : RecyclerView.ViewHolder(
@@ -18,7 +17,7 @@ class productViewHolder(viewGroup: ViewGroup) : RecyclerView.ViewHolder(
     fun bindTo(products: Product) {
 
         txtName.text = products.title
-        txtIsPrimary.text = products.oldPrice
+        txtIsPrimary.text = products.oldPrice.toString()
 
     }
 

@@ -100,7 +100,7 @@ class MainActivity : AppCompatActivity() {
                     call: Call<List<DiscoverResponse>>?, response: Response<List<DiscoverResponse>>?
                 ) {
 
-                    //    (recyclerView_products.adapter as productsAdapter).setNewList(response?.body()?.get(1)?.type?.get(1)?.products!!)
+                    //  (recyclerView_products.adapter as productsAdapter).setNewList(response?.body()?.get(1)?.data?.get(0)?.products!!)
 
                     Toast.makeText(this@MainActivity, "Success", Toast.LENGTH_LONG).show()
                 }

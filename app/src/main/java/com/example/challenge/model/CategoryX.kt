@@ -10,7 +10,7 @@ data class CategoryX(
     @SerializedName("order")
     val order: Int,
     @SerializedName("parent_category")
-    val parentCategory: Any,
+    val parentCategory: ParentCategory,
     @SerializedName("parent_id")
-    val parentId: Any
+    val parentId: Int
 )
