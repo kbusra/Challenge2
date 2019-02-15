@@ -10,7 +10,7 @@ class RetrofitClient {
 
             return Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
-                .baseUrl("https://www.vitrinova.com/api/v2/")
+                .baseUrl("https://www.vitrinova.com/")
                 .build()
         }
     }

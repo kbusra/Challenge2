@@ -18,92 +18,94 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        /*   val productList = ArrayList<Products>()
 
-        /*    val productList = ArrayList<Products>()
-
-            productList.add(
-                Products(
-                    "https://www.geartechnology.com/blog/wp-content/uploads/2016/02/google_logo_2015_by_eduard2009-d9809xo-800x500_c.png",
-                    "1998",
-                    "Google",
-                    "25 TL",
-                    "50 TL"
-                )
-            )
-            productList.add(
-                Products(
-                    "https://www.geartechnology.com/blog/wp-content/uploads/2016/02/google_logo_2015_by_eduard2009-d9809xo-800x500_c.png",
-                    "1998",
-                    "Google",
-                    "25 TL",
-                    "50 TL"
-                )
-            )
-            productList.add(
-                Products(
-                    "https://www.geartechnology.com/blog/wp-content/uploads/2016/02/google_logo_2015_by_eduard2009-d9809xo-800x500_c.png",
-                    "1998",
-                    "Google",
-                    "25 TL",
-                    "50 TL"
-                )
-            )
-            productList.add(
-                Products(
-                    "https://www.geartechnology.com/blog/wp-content/uploads/2016/02/google_logo_2015_by_eduard2009-d9809xo-800x500_c.png",
-                    "1998",
-                    "Google",
-                    "25 TL",
-                    "50 TL"
-                )
-            )
-            productList.add(
-                Products(
-                    "https://www.geartechnology.com/blog/wp-content/uploads/2016/02/google_logo_2015_by_eduard2009-d9809xo-800x500_c.png",
-                    "1998",
-                    "Google",
-                    "25 TL",
-                    "50 TL"
-                )
-            )
-            productList.add(
-                Products(
-                    "https://www.geartechnology.com/blog/wp-content/uploads/2016/02/google_logo_2015_by_eduard2009-d9809xo-800x500_c.png",
-                    "1998",
-                    "Google",
-                    "25 TL",
-                    "50 TL"
-                )
-            )
-            productList.add(
-                Products(
-                    "https://www.geartechnology.com/blog/wp-content/uploads/2016/02/google_logo_2015_by_eduard2009-d9809xo-800x500_c.png",
-                    "1998",
-                    "Google",
-                    "25 TL",
-                    "50 TL"
-                )
-            )  */
-
+           productList.add(
+               Products(
+                   "https://www.geartechnology.com/blog/wp-content/uploads/2016/02/google_logo_2015_by_eduard2009-d9809xo-800x500_c.png",
+                   "1998",
+                   "Google",
+                   "25 TL",
+                   "50 TL"
+               )
+           )
+           productList.add(
+               Products(
+                   "https://www.geartechnology.com/blog/wp-content/uploads/2016/02/google_logo_2015_by_eduard2009-d9809xo-800x500_c.png",
+                   "1998",
+                   "Google",
+                   "25 TL",
+                   "50 TL"
+               )
+           )
+           productList.add(
+               Products(
+                   "https://www.geartechnology.com/blog/wp-content/uploads/2016/02/google_logo_2015_by_eduard2009-d9809xo-800x500_c.png",
+                   "1998",
+                   "Google",
+                   "25 TL",
+                   "50 TL"
+               )
+           )
+           productList.add(
+               Products(
+                   "https://www.geartechnology.com/blog/wp-content/uploads/2016/02/google_logo_2015_by_eduard2009-d9809xo-800x500_c.png",
+                   "1998",
+                   "Google",
+                   "25 TL",
+                   "50 TL"
+               )
+           )
+           productList.add(
+               Products(
+                   "https://www.geartechnology.com/blog/wp-content/uploads/2016/02/google_logo_2015_by_eduard2009-d9809xo-800x500_c.png",
+                   "1998",
+                   "Google",
+                   "25 TL",
+                   "50 TL"
+               )
+           )
+           productList.add(
+               Products(
+                   "https://www.geartechnology.com/blog/wp-content/uploads/2016/02/google_logo_2015_by_eduard2009-d9809xo-800x500_c.png",
+                   "1998",
+                   "Google",
+                   "25 TL",
+                   "50 TL"
+               )
+           )
+           productList.add(
+               Products(
+                   "https://www.geartechnology.com/blog/wp-content/uploads/2016/02/google_logo_2015_by_eduard2009-d9809xo-800x500_c.png",
+                   "1998",
+                   "Google",
+                   "25 TL",
+                   "50 TL"
+               )
+           )
+   */
         recyclerView_products.apply {
             this.layoutManager = LinearLayoutManager(this@MainActivity, LinearLayoutManager.HORIZONTAL, false)
-            //  this.adapter = productsAdapter(productList)
+            // this.adapter = productsAdapter(productList)
         }
 
-        RetrofitClient.getClient().create(DiscoverServices::class.java).getStoriesById().enqueue(object :
-            Callback<DiscoverResponse> {
-            override fun onFailure(call: Call<DiscoverResponse>?, t: Throwable?) {
-                Toast.makeText(this@MainActivity, "Failure", Toast.LENGTH_LONG).show()
-            }
 
-            override fun onResponse(call: Call<DiscoverResponse>?, response: Response<DiscoverResponse>?) {
+        RetrofitClient.getClient().create(DiscoverServices::class.java).getProduct()
+            .enqueue(object : Callback<List<DiscoverResponse>> {
+                override fun onFailure(call: Call<List<DiscoverResponse>>?, t: Throwable?) {
+                    Toast.makeText(this@MainActivity, "Failure", Toast.LENGTH_LONG).show()
+                }
 
-                //     recyclerView_products.adapter = productsAdapter(response?.body()?.data?.products!!)
+                override fun onResponse(
+                    call: Call<List<DiscoverResponse>>?, response: Response<List<DiscoverResponse>>?
+                ) {
 
-                Toast.makeText(this@MainActivity, "Success", Toast.LENGTH_LONG).show()
-            }
+                    //    (recyclerView_products.adapter as productsAdapter).setNewList(response?.body()?.get(1)?.type?.get(1)?.products!!)
 
-        })
+                    Toast.makeText(this@MainActivity, "Success", Toast.LENGTH_LONG).show()
+                }
+
+            })
 
     }
 }
